@@ -1,0 +1,153 @@
+DEFAULTDELAY 500
+DEFAULTDELAYFUZZ 0
+
+DEFINE Name YOUR_NAME
+
+servername
+REM character other than a-z,0-9, - and _ will be ignored
+
+Tab
+Username
+REM character other than a-z,0-9, - and _ will be ignored
+
+Tab
+Password
+Tab
+Password
+
+REM UP
+REM german
+
+
+
+
+ENTER
+
+
+
+
+
+IF (german) THEN
+    LAYOUT DE
+
+    REM switch to german keyboard
+    UP
+    UP
+    UP
+    ENTER
+    DOWN
+    REPEAT 10
+    ENTER
+    DOWN
+    DOWN
+    DOWN
+END_IF
+
+
+ENTER
+
+
+REM For 3rd party drivers
+REM UP
+REM SPACE
+REM DOWN
+
+
+
+ENTER
+
+
+ENTER
+REM use wired internet
+
+UP
+Type proxy address
+DOWN
+ENTER
+
+
+REM If you need another mirror:
+REM UP
+REM UP
+REM HOLD BACKSPACE
+REM DELAY 3000
+REM RELEASE BACKSPACE
+REM STRING mirror address
+REM DOWN
+REM DOWN
+
+ENTER
+
+
+HOLD DOWN
+DELAY 3000
+RELEASE DOWN
+
+UP
+
+REM to disable lvm group:
+REM UP UP
+REM space
+REM DOWN DOWN 
+
+
+ENTER
+ENTER
+DOWN
+ENTER
+
+name
+Tab
+servername
+Tab
+Username
+Tab
+Password
+Tab
+Password
+ENTER
+ENTER
+
+ENTER (skip Ubuntu Pro)
+
+space (enable )openssh
+DOWN
+DOWN
+ENTER
+
+
+ENTER
+
+REM skip the line of recommended software
+Tab
+ENTER
+
+
+WAIT (installing)
+
+TAB 
+TAB
+ENTER
+
+WAIT EJECT CD
+ENTER
+
+
+REM reboot
+WAIT
+
+Username
+ENTER
+Password
+ENTER
+
+STRING sudo apt update && sudo apt upgrade -y && sudo apt install ubuntu-desktop -y
+ENTER
+Password
+ENTER
+
+
+WAIT
+
+STRING sudo reboot
+ENTER
